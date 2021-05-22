@@ -5,4 +5,17 @@
 
 create database student;   // Copy this line to create a database with name student
 
+// Now open MySQL Workbench. I am using MySQL Workbench 8.0 CE or Use PopSQL
 
+// Basic datatype of SQL
+/*
+INT          --> Whole numbers
+DECIMAL(m,n) --> Decimal numbers with m digits and n digits after decimal point
+VARCHAR(l)   --> String of text with length l
+BLOB         --> Binary Large Object, stores large data like documents, images etc.,
+DATE         --> 'YYYY-MM-DD' format
+TIMESTAMP    --> 'YYYY-MM-DD HH:MM:SS' used for recordings
+*/
+
+
+// Creation of Tables in a database
