@@ -17,7 +17,7 @@ DATE         --> 'YYYY-MM-DD' format
 TIMESTAMP    --> 'YYYY-MM-DD HH:MM:SS' used for recordings
 */
 
-
+                                                                /* Schemas */
 // Creation of Tables in a database
 
 CREATE TABLE student (
@@ -32,3 +32,24 @@ CREATE TABLE student (
     major VARCHAR(20),
     PRIMARY KEY(student_id)             // Or we can use here
 );
+
+
+// to describe the student tables with all the definitions
+
+DESCRIBE student;
+
+
+// deletion of the student table
+
+DROP TABLE student;
+
+
+// now we are going to alter the table student with adding gpa to student table
+
+ALTER TABLE student ADD gpa DECIMAL(3,2);              // after altering now we describe the student table it will give gpa added to fourth column
+
+
+// delete the particular column from the student table
+
+ALTER TABLE student DROP COLUMN gpa;                   // after altering now we describe the student table it will give gpa deleted from fourth column
+
