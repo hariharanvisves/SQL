@@ -53,3 +53,25 @@ ALTER TABLE student ADD gpa DECIMAL(3,2);              // after altering now we 
 
 ALTER TABLE student DROP COLUMN gpa;                   // after altering now we describe the student table it will give gpa deleted from fourth column
 
+// inserting data into the student table
+
+// 1. Inserting the all the required values in the student table
+INSERT INTO student VALUES(
+    1,
+    'Jack',
+    'Biology'
+);
+
+// 2. Inserting the corresponding values in the student table
+INSERT INTO student(student_id, name, major) VALUES (
+    2,
+    'Manoj', 
+    'Maths'
+);
+
+// 3. Inserting particular values in the student table
+INSERT INTO student(student_id, name) VALUES (
+    3,
+    'Raju' 
+);                                     // From this the major has the default value of NULL
+// But we can't able to make the primary key value as NULL or making empty
