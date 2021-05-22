@@ -1,0 +1,8 @@
+// Install MySql database
+// Open up MySQL Command Line Client
+
+// From this we can create a database
+
+create database student;   // Copy this line to create a database with name student
+
+
