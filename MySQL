@@ -19,3 +19,16 @@ TIMESTAMP    --> 'YYYY-MM-DD HH:MM:SS' used for recordings
 
 
 // Creation of Tables in a database
+
+CREATE TABLE student (
+    student_id INT PRIMARY KEY,         // Here we can create a primary key directly or
+    name VARCHAR(20),
+    major VARCHAR(20)
+);
+
+CREATE TABLE student (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(20),
+    major VARCHAR(20),
+    PRIMARY KEY(student_id)             // Or we can use here
+);
