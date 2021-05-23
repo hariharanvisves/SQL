@@ -17,7 +17,9 @@ DATE         --> 'YYYY-MM-DD' format
 TIMESTAMP    --> 'YYYY-MM-DD HH:MM:SS' used for recordings
 */
 
+// In this all the uppercase words are keywords
                                                                 /* Schemas */
+
 // Creation of Tables in a database
 
 CREATE TABLE student (
@@ -39,7 +41,7 @@ CREATE TABLE student (
 DESCRIBE student;
 
 
-// deletion of the student table
+// deletion of the entire student table
 
 DROP TABLE student;
 
@@ -52,6 +54,7 @@ ALTER TABLE student ADD gpa DECIMAL(3,2);              // after altering now we 
 // delete the particular column from the student table
 
 ALTER TABLE student DROP COLUMN gpa;                   // after altering now we describe the student table it will give gpa deleted from fourth column
+
 
 // inserting data into the student table
 
@@ -73,5 +76,27 @@ INSERT INTO student(student_id, name, major) VALUES (
 INSERT INTO student(student_id, name) VALUES (
     3,
     'Raju' 
-);                                     // From this the major has the default value of NULL
+);                                      // From this the major has the default value of NULL
 // But we can't able to make the primary key value as NULL or making empty
+
+
+// To get the data values from the student table 
+SELECT * FROM student;                  // * is used to get all the data from the tables
+
+SELECT student_id, name FROM student;   // We can get the data of the required fields in the student table
+
+
+// We can use constrains to make easier to control the inserting elements in the table
+// 1. NOT NULL command - this is used to not to get NULL values for the particular column
+CREATE TABLE student (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,          // In this we cannot INSERT the value of the name value in NULL 
+    subject VARCHAR(20)
+);
+// 2. UNIQUE command - this is used to unique values for the particular column
+CREATE TABLE student (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    subject VARCHAR(20) UNIQUE          // In this we cannot INSERT the value of the subject value in same subject name i.e, no duplicates entry premises
+);
+// Since PRIMARY KEY is a key which has both NOT NULL and UNIQUE constrains
