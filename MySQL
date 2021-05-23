@@ -87,16 +87,33 @@ SELECT student_id, name FROM student;   // We can get the data of the required f
 
 
 // We can use constrains to make easier to control the inserting elements in the table
+
 // 1. NOT NULL command - this is used to not to get NULL values for the particular column
 CREATE TABLE student (
     student_id INT PRIMARY KEY,
     name VARCHAR(20) NOT NULL,          // In this we cannot INSERT the value of the name value in NULL 
-    subject VARCHAR(20)
+    major VARCHAR(20)
 );
+
 // 2. UNIQUE command - this is used to unique values for the particular column
 CREATE TABLE student (
     student_id INT PRIMARY KEY,
     name VARCHAR(20) NOT NULL,
-    subject VARCHAR(20) UNIQUE          // In this we cannot INSERT the value of the subject value in same subject name i.e, no duplicates entry premises
+    major VARCHAR(20) UNIQUE          // In this we cannot INSERT the value of the subject value in same subject name i.e, no duplicates entry premises
 );
 // Since PRIMARY KEY is a key which has both NOT NULL and UNIQUE constrains
+
+// 3. DEFAULT command - this is used to give the default value for the particular column
+CREATE TABLE student (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    major VARCHAR(20) DEFAULT 'undecided'   // When we insert elements without a major column it will automatically puts default value
+);
+
+// 4. AUTO_INCREMENT command - this is used to automatically puts the number by incrementing the values from 1
+CREATE TABLE student (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,  // This will automatically increment the values when we insert the student_id column without values
+    name VARCHAR(20) NOT NULL,
+    major VARCHAR(20) DEFAULT 'undecided'   
+);
+// Since we use AUTO_INCREMENT we cannot use PRIMARY KEY constrains
