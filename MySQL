@@ -20,6 +20,8 @@ TIMESTAMP    --> 'YYYY-MM-DD HH:MM:SS' used for recordings
 // In this all the uppercase words are keywords
                                                                 /* Schemas */
 
+// -- is the comment for SQL
+
 // Creation of Tables in a database
 
 CREATE TABLE student (
@@ -149,3 +151,43 @@ WHERE student_id = 5;       // This will delete the row whose student_id is 5
 
 DELETE FROM student
 WHERE name = 'Hari' AND major = 'undecided';
+
+// Basic Queries
+
+// first add the list of student's details to the table
+INSERT INTO student VALUES(1,'Jack','Biology');
+INSERT INTO student VALUES(2,'Kate','Sociology');
+INSERT INTO student VALUES(3,'Claire','Chemistry');
+INSERT INTO student VALUES(4,'Jack','Biology');
+INSERT INTO student VALUES(5,'Mike','Computer Science');
+
+SELECT * FROM student;                                                  // Gives all values from the student table
+SELECT name FROM student;                                               // Gives all the name values from the student table
+SELECT name,major FROM student;                                         // Gives all the name and major values from the student table
+SELECT student.student_id, student.name FROM student;                   // Gives all the student_id and name  values from the student table
+
+// ORDER BY 
+
+SELECT student.name, student.major 
+FROM student
+ORDER BY name;                                      // It will give the ascending order of name along with the major value
+
+SELECT student.name, student.major 
+FROM student
+ORDER BY name ASE;                                  // It will gives in ascending order
+
+SELECT student.name, student.major 
+FROM student
+ORDER BY student_id DESC;                           // It will gives in descending order
+
+SELECT * 
+FROM student
+ORDER BY name,student_id;                           // First order by name then by student_id
+
+SELECT * 
+FROM student
+ORDER BY name,student_id DESC;                      // First order by name then by student_id by descending order
+
+SELECT * 
+FROM student
+ORDER BY name DESC,student_id DESC;                 // First order by name by descending then by student_id by descending order
