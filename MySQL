@@ -117,3 +117,35 @@ CREATE TABLE student (
     major VARCHAR(20) DEFAULT 'undecided'   
 );
 // Since we use AUTO_INCREMENT we cannot use PRIMARY KEY constrains
+
+
+// Updating and deleting the row in the tables
+
+UPDATE student
+SET major = 'Bio'
+WHERE major = 'Biology';        // This is used to update the row values with the condition
+// other comparisons are : = , <> , > , < , >= , <=
+
+UPDATE student
+SET major = 'Maths'
+WHERE student_id = 3; 
+
+UPDATE student
+SET major = 'Bio-Chemistry'
+WHERE major = 'Biology' OR major = 'Chemistry'; 
+// other logical operators are : AND, OR, NOT NULL
+
+UPDATE student
+SET name = 'Hari', major = 'Physics'
+WHERE student_id = 1;
+
+UPDATE student
+SET major = 'Maths';        // Here without condition, by this we put all the row values of major to 'maths'
+
+DELETE FROM student;        // This will delete the entire row in the table but not the tables
+
+DELETE FROM student
+WHERE student_id = 5;       // This will delete the row whose student_id is 5
+
+DELETE FROM student
+WHERE name = 'Hari' AND major = 'undecided';
