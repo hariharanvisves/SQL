@@ -193,4 +193,37 @@ FROM student
 ORDER BY name DESC,student_id DESC;                 // First order by name by descending then by student_id by descending order
 
 // Getting specified row values from tables
+// LIMIT Query
+SELECT * 
+FROM student
+LIMIT 2;                                            // This will give the values of the first 2 row's since we give limit 2
+
+SELECT * 
+FROM student
+ORDER BY student_id DESC
+LIMIT 2;                                            // This will give the values of the top two rows which is descending order of student_id
+
+// Filtering the values 
+SELECT *
+FROM student
+WHERE major = 'Biology';                            // Only show the students who has the major in Biology 
+
+SELECT name,major
+FROM student
+WHERE major = 'Biology' OR student_id > 3 OR name <> 'Kate';     // Only show the name and major of students who has the major in Biology or student_id is greater than 3 or name is not Kate
+// we can use <> , <= , >= , < , > , AND , OR 
+
+
+// Using IN keyword
+SELECT *
+FROM student
+WHERE name IN ('Mike','Kate');                      // Gives all the student name whose name is Mike, Kate
+
+SELECT *
+FROM student
+WHERE major IN ('Biology','Chemistry');             // Gives all the student name whose major is Biology, Chemistry
+
+SELECT *
+FROM student
+WHERE major IN ('Biology','Chemistry') AND student_id > 2;             // Gives all the student name whose major is Biology, Chemistry and student_id is greater than 2
 
