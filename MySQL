@@ -227,3 +227,5 @@ SELECT *
 FROM student
 WHERE major IN ('Biology','Chemistry') AND student_id > 2;             // Gives all the student name whose major is Biology, Chemistry and student_id is greater than 2
 
+// ********************************************* Company Database Introduction ************************************************ //
+
