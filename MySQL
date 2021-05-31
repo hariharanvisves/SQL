@@ -403,8 +403,28 @@ SELECT COUNT(emp_id)
 FROM employee
 WHERE sex='F' AND birth_day = '1970-01-01';
 
+
 2. AVG()
 
 // Find the average of all employees
 SELECT AVG(salary)
 FROM employee;
+
+
+3. SUM()
+
+// Find the sum of salary of all employees
+SELECT SUM(salary)
+FROM employee;
+
+// *************************************************************** Aggregations ***************************************************************
+
+// Find out how many males and female are there employees
+SELECT COUNT(sex), sex
+FROM employee
+GROUP BY sex;
+
+// Find out total sales of each sales employee
+SELECT SUM(total_sales), emp_id
+FROM works_with
+GROUP BY emp_id;
