@@ -227,6 +227,8 @@ SELECT *
 FROM student
 WHERE major IN ('Biology','Chemistry') AND student_id > 2;             // Gives all the student name whose major is Biology, Chemistry and student_id is greater than 2
 
+
+
 // ********************************************* Company Database Introduction ************************************************ //
 
 
@@ -357,3 +359,32 @@ INSERT INTO works_with VALUES(105, 404, 33000);
 INSERT INTO works_with VALUES(107, 405, 26000);
 INSERT INTO works_with VALUES(102, 406, 15000);
 INSERT INTO works_with VALUES(105, 406, 130000);
+
+// More basic Queries
+1. Find all employees
+SELECT * 
+FROM employee;
+2. Find all clients
+SELECT *
+FROM clients;
+3. Find all employees ordered by salary
+SELECT *
+FROM employee
+ORDER BY salary DESC;
+4. Find all employees ordered by sex and then by first_name and then by last_name
+SELECT *
+FROM employee
+ORDER BY sex, first_name, last_name;
+5. Find 5 employees in the table
+SELECT * 
+FROM employee
+LIMIT 5;
+6. Find first and last name of the employees
+SELECT first_name, last_name
+FROM employee;
+7. Find forename and surname of the employees
+SELECT first_name AS forename, last_name AS surname
+FROM employee;
+8. Find out all different gender
+SELECT DISTINCT sex
+FROM employee;
