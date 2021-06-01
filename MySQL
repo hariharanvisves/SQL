@@ -428,3 +428,26 @@ GROUP BY sex;
 SELECT SUM(total_sales), emp_id
 FROM works_with
 GROUP BY emp_id;
+
+// ************************************************************** Wildcards ********************************************************************
+
+// LIKE is the wildcard character
+1. Find any client who are an LLC
+SELECT *
+FROM client
+WHERE client_name LIKE '%LLC%';
+
+2. Find any branch suppliers who are in the "label" in business
+SELECT *
+FROM branch_supplier
+WHERE supplier_id LIKE '%label%';
+
+3. Find all employees born in October
+SELECT *
+FROM employee
+WHERE birth_day LIKE '____-10-__';
+
+4. Find all clients who are in schools
+SELECT *
+FROM client
+WHERE client_name LIKE '%school%';
