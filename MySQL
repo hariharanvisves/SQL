@@ -429,7 +429,7 @@ SELECT SUM(total_sales), emp_id
 FROM works_with
 GROUP BY emp_id;
 
-// ************************************************************** Wildcards ********************************************************************
+// ************************************************************** Wildcards ******************************************************************
 
 // LIKE is the wildcard character
 1. Find any client who are an LLC
@@ -451,3 +451,35 @@ WHERE birth_day LIKE '____-10-__';
 SELECT *
 FROM client
 WHERE client_name LIKE '%school%';
+
+// ************************************************************** Unions ********************************************************************
+
+1. Find a list of employee names and branch names
+SELECT first_name
+FROM employee
+UNION
+SELECT branch_name
+FROM branch;
+
+SELECT first_name AS company_name
+FROM employee
+UNION
+SELECT branch_name
+FROM branch;
+
+2. Find a list of all clients & branch suppliers name
+SELECT client_name AS name, client.branch_id
+FROM client
+UNION
+SELECT supplier_name, branch_supplier.branch_id
+FROM branch_supplier; 
+
+3. Find a list of all money spent or earned by the company
+SELECT SUM(salary)
+FROM employee
+UNION
+SELECT SUM(total_sales)
+FROM works_with;
+
+// ************************************************************** Joins ********************************************************************
+
