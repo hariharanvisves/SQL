@@ -502,3 +502,5 @@ RIGHT JOIN branch
 WHERE employee.emp_id = branch.mgr_id;
 
 // OUTER JOIN is not in MySQL
+
+// ************************************************************** Nested Queries *************************************************************
