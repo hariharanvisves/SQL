@@ -483,3 +483,22 @@ FROM works_with;
 
 // ************************************************************** Joins ********************************************************************
 
+INSERT INTO branch (4,'Buffalo',NULL,NULL);
+
+1. Find all branches and the names of their managers
+SELECT employee.emp_id, employee.first_name, employee.last_name, branch.branch_name
+FROM employee
+JOIN branch
+WHERE employee.emp_id = branch.mgr_id;
+
+SELECT employee.emp_id, employee.first_name, employee.last_name, branch.branch_name
+FROM employee
+LEFT JOIN branch
+WHERE employee.emp_id = branch.mgr_id;
+
+SELECT employee.emp_id, employee.first_name, employee.last_name, branch.branch_name
+FROM employee
+RIGHT JOIN branch
+WHERE employee.emp_id = branch.mgr_id;
+
+// OUTER JOIN is not in MySQL
